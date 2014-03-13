@@ -9,7 +9,7 @@ development:
   reconnect: false
   database: ejercicio1
   pool: 5
-  username: sa
+  username: 
   password: 
   host: localhost
 
@@ -22,7 +22,7 @@ test:
   reconnect: false
   database: ejercicio1_test
   pool: 5
-  username: root
+  username: 
   password: 
   host: localhost
 
@@ -32,6 +32,6 @@ production:
   reconnect: false
   database: ejercicio1_prod
   pool: 5
-  username: root
+  username: 
   password: 
   host: localhost

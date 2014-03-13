@@ -6,6 +6,7 @@
     <tr>
       <th>Product name</th>
       <th>Description</th>
+      <th>Category</th>      
       <th>Added at</th>
       <th>Manufacturer</th>
       <th>Stock</th>
@@ -20,6 +21,7 @@
       <tr>
         <td><%= product.product_name %></td>
         <td><%= product.description %></td>
+        <td><%= product.category %></td>
         <td><%= product.added_at %></td>
         <td><%= product.manufacturer %></td>
         <td><%= product.stock %></td>
@@ -35,3 +37,6 @@
 <br>
 
 <%= link_to 'New Product', new_product_path %>
+<br>
+<%= link_to 'New Order', new_order_path %>
+<%= link_to 'Orders', orders_path %>
