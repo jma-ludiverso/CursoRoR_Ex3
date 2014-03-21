@@ -11,8 +11,12 @@ class Product < ActiveRecord::Base
 		errors.add(:added_at, "can't be a past date") if 
 		!added_at.blank? and added_at < Date.today 
 	end	
+
+	def product_with_category
+    	"#{product_name} - #{category}"
+  	end
 	
 	has_many :line_items
   	has_many :orders, through: :line_items
-
+	
 end

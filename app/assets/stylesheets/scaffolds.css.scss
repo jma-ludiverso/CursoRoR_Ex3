@@ -1,15 +1,26 @@
+$font-stack: arial,sans-serif;
+$back-color: #222;
+$text-color: #FFF;
+$table-back-color: #303030;
+$table-border-color: #272727;
+
 body {
-  background-color: #fff;
-  color: #333;
-  font-family: verdana, arial, helvetica, sans-serif;
+  background-color: $back-color;
+  color: $text-color;
+  font-family:$font-stack;
   font-size: 13px;
   line-height: 18px;
 }
 
 p, ol, ul, td {
-  font-family: verdana, arial, helvetica, sans-serif;
+  font-family:$font-stack;
   font-size: 13px;
   line-height: 18px;
+}
+
+h1{
+  font-size:20px;
+  text-align:center;
 }
 
 pre {
@@ -19,14 +30,9 @@ pre {
 }
 
 a {
-  color: #000;
-  &:visited {
-    color: #666;
-  }
-  &:hover {
-    color: #fff;
-    background-color: #000;
-  }
+  color: $text-color;
+  font-weight: bold;
+  text-decoration: none;
 }
 
 div {
@@ -66,4 +72,52 @@ div {
     font-size: 12px;
     list-style: square;
   }
+}
+
+.btn {
+    display: inline-block;
+    margin-bottom: 5px;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 10px 15px;
+    font-size: 15px;
+    line-height: 1.42857;
+    border-radius: 4px;
+    min-width: 90px;
+    -moz-user-select: none;
+}
+
+.items_table {
+  font-family: $font-stack;
+  font-size:11px;
+  back-color: $table-back-color;
+  border-width: 1px;
+  border-color: $table-border-color;
+  border-collapse: collapse;
+  width:100%;
+}
+
+.items_table th {
+  border-width: 1px;
+  padding: 8px;
+  border-style: solid;
+  border-color: $table-border-color;
+  font-size:14px;
+}
+
+.items_table td {
+  border-width: 1px;
+  padding: 8px;
+  border-style: solid;
+  border-color: $table-border-color;
+  background-color: $table-back-color;
+}
+
+.centercell{
+  text-align: center;
 }

@@ -14,3 +14,14 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+function remove_line_item(link) {  	
+    $(link).prev("input[type=hidden]").val(1);
+    $(link).closest(".items").hide();  	
+}
+
+function add_fields(link, association, content) {
+        var new_id = new Date().getTime();
+        var regexp = new RegExp("new_" + association, "g");
+        $(link).parent().parent().before(content.replace(regexp, new_id));
+}

@@ -35,7 +35,24 @@
     <%= f.label :customer_surname %><br>
     <%= f.text_field :customer_surname %>
   </div>
+  <div>
+    <table class="items_table">
+      <tr class="orderrow">
+          <th colspan="4">Order products</th>
+      </tr>      
+      <tr class="orderrow">
+        <th>Product</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Actions</th>
+      </tr>
+      <%= f.fields_for :line_items do |builder| %>
+        <%= render 'line_item_fields', :f => builder %>
+      <% end %>       
+      <tr><td colspan="4"><%= link_to_add_fields "Add new line", f, :line_items %></td></tr>      
+    </table>
+  </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Save changes', :class => 'btn btn-order'%>
   </div>
 <% end %>

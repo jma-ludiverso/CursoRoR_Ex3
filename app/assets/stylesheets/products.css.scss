@@ -1,38 +1,22 @@
 // Place all the styles related to the products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-h1{
-	font-size:20px;
-	text-align:center;
-	background-color:#dedede;
-	height:25px;
+ 
+$product-color: #375A7F;
+
+.productview{
+	background-color: $product-color;	
+	height:50px;	
+	padding-top:10px;
+	margin-bottom:20px;
 }
 
-.products_main{
-	font-family:arial;
+.btn-product {
+    border-color: $product-color;
+    background-color: $product-color;
+    color: #FFF;
 }
 
-.products_table {
-	font-family: arial,sans-serif;
-	font-size:11px;
-	color:#333333;
-	border-width: 1px;
-	border-color: #666666;
-	border-collapse: collapse;
-	width:100%;
-}
-.products_table th {
-	border-width: 1px;
-	padding: 8px;
-	border-style: solid;
-	border-color: #666666;
-	background-color: #dedede;
-	font-size:14px;
-}
-.products_table td {
-	border-width: 1px;
-	padding: 8px;
-	border-style: solid;
-	border-color: #666666;
-	background-color: #ffffff;
+.productrow{
+  background-color: $product-color;
 }

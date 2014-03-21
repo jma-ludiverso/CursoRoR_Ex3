@@ -35,7 +35,11 @@
     <%= f.label :stock %><br>
     <%= f.number_field :stock %>
   </div>
+  <div class="field">
+    <%= f.label :price %><br>
+    <%= f.number_field :price %>
+  </div>  
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Save changes', :class => 'btn btn-product'%>
   </div>
 <% end %>
