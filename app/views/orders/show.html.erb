@@ -43,13 +43,7 @@
     <th>Quantity</th>
     <th>Price</th>
   </tr>
-  <% for line_item in @order.line_items %>
-    <tr>
-      <td><%=h line_item.product.product_name %></td>
-      <td class="centercell"><%=h line_item.quantity %></td>
-      <td class="centercell"><%=h number_to_currency(line_item.price, precision: 2, unit: "€") %></td>
-    </tr>  
-  <% end %> 
+  <%= render partial: 'line_item', collection: @order.line_items %> 
 </table>
 
 <br/>

@@ -1,5 +1,5 @@
 <tr class="items">
-	<td><%= f.collection_select :product_id, Product.all, :id, :product_with_category, prompt: true %></td>
+	<td><%= f.collection_select :product_id, Product.all, :id, :product_with_category, { prompt: true }, { class: 'selectproduct' } %></td>
 	<td class="centercell"><%= f.text_field :quantity %></td>
 	<td class="centercell"><%= f.text_field :price %></td>
   	<td class="centercell">

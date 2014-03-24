@@ -1,0 +1,5 @@
+<tr>
+	<td><%=h line_item.product.product_name %></td>
+  	<td class="centercell"><%=h line_item.quantity %></td>
+  	<td class="centercell"><%=h number_to_currency(line_item.price, precision: 2, unit: "€") %></td>
+</tr>  
