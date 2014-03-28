@@ -1,6 +1,7 @@
 Ejercicio1::Application.routes.draw do
   
   get "sessions/login"
+  get "sessions/destroy", to: 'sessions#destroy'
   post "sessions/login", to: 'sessions#create'
 
   resources :users

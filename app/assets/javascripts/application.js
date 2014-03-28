@@ -31,7 +31,7 @@ function select_menu(select){
 		if(this.value==1){
 			window.location.href = "../sessions/login"
 		}else{
-			window.location.href = "../sessions/login?par=destroy"
+			window.location.href = "../sessions/destroy"
 		}
 	}
 }
