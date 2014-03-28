@@ -43,7 +43,7 @@
     <th>Quantity</th>
     <th>Price</th>
   </tr>
-  <%= render partial: 'line_item', collection: @order.line_items %> 
+  <%= render @order.line_items %> 
 </table>
 
 <br/>

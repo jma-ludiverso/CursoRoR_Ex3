@@ -25,3 +25,13 @@ function add_fields(link, association, content) {
         var regexp = new RegExp("new_" + association, "g");
         $(link).parent().parent().before(content.replace(regexp, new_id));
 }
+
+function select_menu(select){
+	if(this.value!=0){
+		if(this.value==1){
+			window.location.href = "../sessions/login"
+		}else{
+			window.location.href = "../sessions/login?par=destroy"
+		}
+	}
+}

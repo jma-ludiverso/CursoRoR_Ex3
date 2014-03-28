@@ -1,0 +1,32 @@
+<%= form_tag sessions_login_path, :class => 'loginbox' do %>
+	<div>
+		<div class="userview">
+			<h1>Sign in</h1>
+		</div>
+		<div class="logincontrols">
+			<table>
+				<tr>
+					<td><%= label_tag :email %></td>
+					<td><%= text_field_tag :email, params[:email], :class => 'txtLogin' %></td>
+				</tr>
+				<tr>
+					<td><%= label_tag :password %></td>
+					<td><%= password_field_tag :password, '', :class => 'txtLogin' %></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="right">
+						<%= submit_tag 'Log in', :class => 'btn btn-user' %>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div align="center">
+			<br>
+			If you don't have an account, please <%= link_to 'sign up', new_user_path, class: 'loginlink' %> first!
+			<br>
+			<div class="loginmsg">
+				<%= flash[:alert] %>
+			</div>
+		</div>
+	</div>
+<% end %>

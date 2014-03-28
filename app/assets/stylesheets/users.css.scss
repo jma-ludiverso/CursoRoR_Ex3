@@ -1,0 +1,63 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$user-color: #FFF;
+$user-text-color: black;
+
+.userview{
+	background-color: $user-color;	
+	color: $user-text-color;
+	height:50px;	
+	padding-top:10px;
+	margin-bottom:20px;
+}
+
+.loginbox{
+
+    font-weight: normal;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid;
+    white-space: nowrap;
+    padding: 10px 15px;
+    font-size: 15px;
+    line-height: 1.42857;
+    border-radius: 4px;
+    min-width: 90px;
+    -moz-user-select: none;
+	margin: 0px auto;
+	width: 400px;
+	margin-top: 100px;
+}
+
+.logincontrols{
+	margin: auto;
+	width: 55%;
+}
+
+.txtLogin{
+	width: 150px;
+}
+
+.loginlink{
+  color: $user-color;	
+}
+
+.loginback{
+  color: $user-text-color;       
+}
+
+.btn-user {
+    border-color: $user-color;
+    background-color: $user-color;
+    color: $user-text-color;
+	font-weight: bold;
+}
+
+.loginmsg{
+    color: red;
+    font-weight: bold;
+}

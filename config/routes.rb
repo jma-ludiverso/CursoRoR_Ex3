@@ -1,4 +1,10 @@
 Ejercicio1::Application.routes.draw do
+  
+  get "sessions/login"
+  post "sessions/login", to: 'sessions#create'
+
+  resources :users
+
   resources :orders
 
   resources :products
@@ -8,7 +14,7 @@ Ejercicio1::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
-  root 'products#index'
+  root 'sessions#login'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -25,7 +31,7 @@ Ejercicio1::Application.routes.draw do
   #       get 'short'
   #       post 'toggle'
   #     end
-  #
+  
   #     collection do
   #       get 'sold'
   #     end

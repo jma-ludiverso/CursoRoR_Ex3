@@ -1,12 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Curso rails - Ejercicio 4</title>
+  <title>Curso rails - Ejercicio 5</title>
 	<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
 	<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 	<%= csrf_meta_tags %>
 </head>
 <body>
+<div class="headermenu">
+	<span>Actions</span>
+	<% 
+		if !!session[:user_id]
+			@menu = [{"menu"=>"(choose an action)", "id"=>"0"}, {"menu"=>"Sign out", "id"=>"2"}]
+		else
+			@menu = [{"menu"=>"(choose an action)", "id"=>"0"}, {"menu"=>"Sign in", "id"=>"1"}, {"menu"=>"Sign out", "id"=>"2"}]			
+		end 
+	%>
+	<%= select_tag "menu", options_for_select(@menu.collect {|p| [ p['menu'], p['id'] ] }), :onchange => 'select_menu(this)' %>
+</div>
 
 <%= yield %>
 
