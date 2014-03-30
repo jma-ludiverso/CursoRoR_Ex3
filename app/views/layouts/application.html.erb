@@ -8,15 +8,10 @@
 </head>
 <body>
 <div class="headermenu">
-	<span>Actions</span>
-	<% 
-		if !!session[:user_id]
-			@menu = [{"menu"=>"(choose an action)", "id"=>"0"}, {"menu"=>"Sign out", "id"=>"2"}]
-		else
-			@menu = [{"menu"=>"(choose an action)", "id"=>"0"}, {"menu"=>"Sign in", "id"=>"1"}, {"menu"=>"Sign out", "id"=>"2"}]			
-		end 
-	%>
-	<%= select_tag "menu", options_for_select(@menu.collect {|p| [ p['menu'], p['id'] ] }), :onchange => 'select_menu(this)' %>
+	<span class="sessiontext">Actions:&nbsp;</span>
+	<div class="sessionlist">
+		<%= render_loginhelper %>
+	</div>
 </div>
 
 <%= yield %>
