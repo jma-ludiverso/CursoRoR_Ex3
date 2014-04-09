@@ -1,0 +1,90 @@
+<form action="<%= products_path %>" method="get" >
+  <div class="searchbox">
+    <h4>Search options</h4>
+    <table>
+      <tr>
+        <td>
+          <div class="field">
+            <%= label_tag(:category) %>:
+          </div>
+        </td>        
+        <td>
+          <div class="field">
+            <input type="text" name="category" value="<%= params[:category] %>">
+          </div>
+        </td>
+        <td>
+          <div class="field">
+            <%= label_tag(:stock) %>:
+          </div>
+        </td>        
+        <td>
+          <div class="field">
+            <input type="text" name="stock" value="<%= params[:stock] %>">
+          </div>
+        </td>
+        <td>
+          <div class="field">
+            <%= label_tag(:manufacturer) %>:
+          </div>
+        </td>                  
+        <td>
+          <div class="field">
+            <input type="text" name="manufacturer" value="<%= params[:manufacturer] %>">
+          </div>
+        </td>          
+      </tr>
+      <tr>
+        <td>
+          <div class="field">
+            <%= label_tag("added_at") %>:
+          </div>
+        </td>                
+        <td>
+          <div class="field">
+            <input type="date" name="date1" value="<%= params[:date1] %>">
+          </div>
+        </td>        
+        <td align="center">
+          <div class="field">
+            <%= label_tag(" to ") %>
+          </div>
+        </td>        
+        <td>
+          <div class="field">
+            <input type="date" name="date2" value="<%= params[:date2] %>">
+          </div>
+        </td>        
+        <td colspan="2">&nbsp;</td>
+      </tr>
+      <tr>
+        <td>
+          <div class="field">
+            <%= label_tag("Price range") %>:
+          </div>
+        </td>        
+        <td>
+          <div class="field">
+            <input type="number" name="price1" value="<%= params[:price1] %>">
+          </div>
+        </td>
+        <td align="center">
+          <div class="field">
+            <%= label_tag(" to ") %>
+          </div>
+        </td>                        
+        <td>
+          <div class="field">
+            <input type="number" name="price2" value="<%= params[:price2] %>">
+          </div>
+        </td>        
+        <td colspan="2">&nbsp;</td>
+      </tr>      
+      <tr>
+        <td colspan="6" align="right">
+          <%= submit_tag 'Search!', :class => 'btn btn-product'%>
+        </td>
+      </tr>
+    </table>
+  </div>
+</form>

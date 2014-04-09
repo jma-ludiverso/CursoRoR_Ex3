@@ -5,6 +5,11 @@ class ProductsController < ApplicationController
   # GET /products.json
   def index
     @products = Product.all
+    @products = @products.search_by_category(params[:category]) if params[:category].present?   
+    @products = @products.search_by_stock(params[:stock]) if params[:stock].present?   
+    @products = @products.search_by_date(params[:date1],params[:date2]) if params[:date1].present? && params[:date2].present?    
+    @products = @products.search_by_manufacturer(params[:manufacturer]) if params[:manufacturer].present?   
+    @products = @products.search_by_price(params[:price1],params[:price2]) if params[:price1].present? && params[:price2].present?    
   end
 
   # GET /products/1
@@ -69,6 +74,6 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:product_name, :description, :category, :added_at, :manufacturer, :stock)
+      params.require(:product).permit(:product_name, :description, :category, :added_at, :manufacturer, :stock, :price)
     end
 end

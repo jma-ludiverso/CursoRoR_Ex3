@@ -20,3 +20,20 @@ $product-color: #375A7F;
 .productrow{
   background-color: $product-color;
 }
+
+.searchbox{
+
+    font-weight: normal;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid;
+    white-space: nowrap;
+    padding: 10px 15px;
+    font-size: 15px;
+    line-height: 1.42857;
+    border-radius: 4px;
+    min-width: 90px;
+    -moz-user-select: none;
+    margin-bottom: 10px;
+}

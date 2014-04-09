@@ -11,10 +11,13 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :order_status %><br>
-    <%= f.text_field :order_status %>
-  </div>
+  <% if params[:action] == "edit" %>
+    <div class="field">
+      <%= f.label :order_status %><br>
+      <%= f.text_field :order_status %>
+    </div>
+  <% end %>
+
   <div class="field">
     <%= f.label :payment_method %><br>
     <%= f.text_field :payment_method %>
@@ -38,18 +41,17 @@
   <div>
     <table class="items_table">
       <tr class="orderrow">
-          <th colspan="4">Order products</th>
+          <th colspan="3">Order products</th>
       </tr>      
       <tr class="orderrow">
         <th>Product</th>
         <th>Quantity</th>
-        <th>Price</th>
         <th>Actions</th>
       </tr>
       <%= f.fields_for :line_items do |builder| %>
         <%= render 'line_item_fields', :f => builder %>
       <% end %>       
-      <tr><td colspan="4"><%= link_to_add_fields "Add new line", f, :line_items %></td></tr>      
+      <tr><td colspan="3"><%= link_to_add_fields "Add new line", f, :line_items %></td></tr>      
     </table>
   </div>
   <div class="actions">
