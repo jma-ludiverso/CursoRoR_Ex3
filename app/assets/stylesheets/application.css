@@ -17,3 +17,13 @@
 	margin-top:20px;
 	margin-right:10px;
 }
+
+#footer {
+   position:absolute;	
+   height:60px;
+   width:98%;
+}
+
+.footer_link{
+	margin-left: 91%;
+}

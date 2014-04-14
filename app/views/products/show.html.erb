@@ -1,47 +1,47 @@
 <div class="productview">
-  <h1>Product details</h1>
+  <h1><%= t "product.details"%></h1>
 </div>
 
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Product name:</strong>
+  <strong><%= t "product.fields.product"%>:</strong>
   <%= @product.product_name %>
 </p>
 
 <p>
-  <strong>Description:</strong>
+  <strong><%= t "product.fields.description"%>:</strong>
   <%= @product.description %>
 </p>
 
 <p>
-  <strong>Category:</strong>
+  <strong><%= t "product.fields.category"%>:</strong>
   <%= @product.category %>
 </p>
 
 <p>
-  <strong>Added at:</strong>
+  <strong><%= t "product.fields.addedat"%>:</strong>
   <%= @product.added_at %>
 </p>
 
 <p>
-  <strong>Manufacturer:</strong>
+  <strong><%= t "product.fields.manufacturer"%>:</strong>
   <%= @product.manufacturer %>
 </p>
 
 <p>
-  <strong>Stock:</strong>
+  <strong><%= t "product.fields.stock"%>:</strong>
   <%= @product.stock %>
 </p>
 
 <p>
-  <strong>Price:</strong>
+  <strong><%= t "product.fields.price"%>:</strong>
   <%= @product.price %>
 </p>
 
 <div class="btn btn-product">
-  <%= link_to 'Edit', edit_product_path(@product) %>
+  <%= link_to t("menu.edit"), edit_product_path(@product) %>
 </div>
 <div class="btn btn-product">
-  <%= link_to 'Back', products_path %>
+  <%= link_to t("menu.back"), products_path %>
 </div>

@@ -13,6 +13,10 @@ class Order < ActiveRecord::Base
 	
 	before_validation :autocomplete_orderstatus, on: :create
 
+	def get_total_price
+		line_items.sum {|l| l.price * l.quantity}
+	end
+
 	protected
 	def autocomplete_orderstatus
 		self.order_status = "Pendiente"

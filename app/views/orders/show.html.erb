@@ -1,56 +1,62 @@
 <div class="orderview">
-  <h1>Orders details</h1>
+  <h1><%= t "order.details"%></h1>
 </div>
 
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Order status:</strong>
+  <strong><%= t "order.fields.status"%>:</strong>
   <%= @order.order_status %>
 </p>
 
 <p>
-  <strong>Payment method:</strong>
+  <strong><%= t "order.fields.payment"%>:</strong>
   <%= @order.payment_method %>
 </p>
 
 <p>
-  <strong>Delivery address:</strong>
+  <strong><%= t "order.fields.deliveryadd"%>:</strong>
   <%= @order.delivery_address %>
 </p>
 
 <p>
-  <strong>Delivery city:</strong>
+  <strong><%= t "order.fields.deliverycity"%>:</strong>
   <%= @order.delivery_city %>
 </p>
 
 <p>
-  <strong>Customer name:</strong>
+  <strong><%= t "order.fields.customername"%>:</strong>
   <%= @order.customer_name %>
 </p>
 
 <p>
-  <strong>Customer surname:</strong>
+  <strong><%= t "order.fields.customersurname"%>:</strong>
   <%= @order.customer_surname %>
 </p>
 
 <table class="items_table">
   <tr class="orderrow">
-      <th colspan="3">Order products</th>
+      <th colspan="3"><%= t "order.orderproducts"%></th>
   </tr>
   <tr class="orderrow">
-    <th>Product</th>
-    <th>Quantity</th>
-    <th>Price</th>
+    <th><%= t "product.fields.product"%></th>
+    <th><%= t "product.fields.quantity"%></th>
+    <th><%= t "product.fields.price"%></th>
   </tr>
   <%= render @order.line_items %> 
+  <tr>ss
+    <td colspan="3" align="right">
+        <%= label_tag(t("order.totalprice")) %>
+        <%=h number_to_currency(@order.get_total_price, precision: 2, unit: "€") %>
+    </td>s
+  </tr>
 </table>
 
 <br/>
 
 <div class="btn btn-order">
-  <%= link_to 'Edit', edit_order_path(@order) %>
+  <%= link_to t("menu.edit"), edit_order_path(@order) %>
 </div>
 <div class="btn btn-order">
-  <%= link_to 'Back', orders_path %>
+  <%= link_to t("menu.back"), orders_path %>
 </div>

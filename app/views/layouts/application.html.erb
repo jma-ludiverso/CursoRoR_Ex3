@@ -1,20 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Curso rails - Ejercicio 5</title>
+  <title>Curso rails - Ejercicio 7</title>
 	<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
 	<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 	<%= csrf_meta_tags %>
 </head>
 <body>
 <div class="headermenu">
-	<span class="sessiontext">Actions:&nbsp;</span>
+	<span class="sessiontext"><%= t "menu.actions" %>:&nbsp;</span>
 	<div class="sessionlist">
 		<%= render_loginhelper %>
 	</div>
 </div>
 
 <%= yield %>
+
+<div id="footer">
+	<div class="footer_link">
+        <%= link_to("English", {locale: :en}) %> |
+        <%= link_to("Español", {locale: :es}) %>
+	<div>
+</div>
 
 </body>
 </html>

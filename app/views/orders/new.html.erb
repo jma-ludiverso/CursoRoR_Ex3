@@ -1,9 +1,9 @@
 <div class="orderview">
-	<h1>New order</h1>
+	<h1><%= t "order.new"%></h1>
 </div>
 
 <%= render 'form' %>
 
 <div class="btn btn-order">
-	<%= link_to 'Back', orders_path %>
+	<%= link_to t("menu.back"), orders_path %>
 </div>

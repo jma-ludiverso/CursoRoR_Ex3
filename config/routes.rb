@@ -1,14 +1,15 @@
 Ejercicio1::Application.routes.draw do
-  
-  delete 'session' => 'sessions#destroy'
-  resources :sessions
 
-  resources :users
+  scope "/:locale", locale: /en|es/, defaults: {locale: "es"} do  
+    delete 'session' => 'sessions#destroy'
+    resources :sessions
 
-  resources :orders
+    resources :users
 
-  resources :products
+    resources :orders
 
+    resources :products
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

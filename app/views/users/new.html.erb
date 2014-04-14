@@ -1,9 +1,9 @@
 <div class="userview">
-	<h1>New user</h1>
+	<h1><%= t "user.new"%></h1>
 </div>
 
 <%= render 'form' %>
 
 <div class="btn btn-user">
-	<%= link_to 'Back', root_url, class: 'loginback'  %>
+	<%= link_to t("menu.back"), root_url, class: 'loginback'  %>
 </div>

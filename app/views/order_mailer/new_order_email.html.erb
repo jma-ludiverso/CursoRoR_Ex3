@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+</head>
+<body>
+	<h2><%= t "order.email.confirmation"%></h2>
+	<p><%= t "order.email.customer1"%>, <%= @user.name %>, <%= t "order.email.customer2"%>!</p>
+	<br/>
+	<table class="items_table">
+	  <tr class="orderrow">
+	      <th colspan="3"><%= t "order.orderproducts"%></th>
+	  </tr>
+	  <tr class="orderrow">
+	    <th><%= t "product.fields.product"%></th>
+	    <th><%= t "product.fields.quantity"%></th>
+	    <th><%= t "product.fields.price"%></th>
+	  </tr>
+	  <%= render @order.line_items %> 
+	  <tr>
+	    <td colspan="3" align="right">
+	        <%= label_tag(t("order.totalprice")) %>
+	        <%=h number_to_currency(@order.get_total_price, precision: 2, unit: "€") %>
+	    </td>s
+	  </tr>
+	</table>	
+	<br/>
+	<p><%= t "order.email.link"%> <%= @url %></p>
+</body>
+</html>

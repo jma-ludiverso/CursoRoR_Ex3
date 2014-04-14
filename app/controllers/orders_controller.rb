@@ -31,6 +31,10 @@ class OrdersController < ApplicationController
       if @order.save
         format.html { redirect_to @order, notice: 'Order was successfully created.' }
         format.json { render action: 'show', status: :created, location: @order }
+
+        user = User.find_by(id:session[:user_id])        
+        OrderMailer.new_order_email(@order,user).deliver    
+
       else
         format.html { render action: 'new' }
         format.json { render json: @order.errors, status: :unprocessable_entity }

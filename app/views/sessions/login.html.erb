@@ -1,7 +1,7 @@
 <%= form_tag sessions_path, :class => 'loginbox' do %>
 	<div>
 		<div class="userview">
-			<h1>Sign in</h1>
+			<h1><%= t "login.signin" %></h1>
 		</div>
 		<div class="logincontrols">
 			<table>
@@ -15,14 +15,14 @@
 				</tr>
 				<tr>
 					<td colspan="2" align="right">
-						<%= submit_tag 'Log in', :class => 'btn btn-user' %>
+						<%= submit_tag t("login.login"), :class => 'btn btn-user' %>
 					</td>
 				</tr>
 			</table>
 		</div>
 		<div align="center">
 			<br>
-			If you don't have an account, please <%= link_to 'sign up', new_user_path, class: 'loginlink' %> first!
+			<%= t "login.advice1" %>&nbsp;<%= link_to t("login.advice2"), new_user_path, class: 'loginlink' %>&nbsp;<%= t "login.advice3" %>!
 			<br>
 			<div class="loginmsg">
 				<%= flash[:alert] %>
