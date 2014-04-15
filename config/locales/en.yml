@@ -209,6 +209,38 @@ en:
   activerecord:
     errors:
       <<: *errors
+    models:
+      order:
+        one: Order
+        other: Orders
+      product:
+        one: Product
+        other: Products
+    attributes:
+      line_item:
+        quantity: quantity
+        price: price
+      order:
+        order_status: Order status
+        payment_method: Payment method
+        delivery_address: Delivery address
+        delivery_city: Delivery city
+        customer_name: Customer name
+        customer_surname: Customer surname
+      product:
+        product_name: Product name
+        description: Description
+        category: Category
+        added_at: Added at
+        manufacturer: Manufacturer
+        stock: Stock
+        price: Price      
+      user:
+        name: Name
+        surname: Surname
+        email: Email
+        password: Password
+        password_confirmation: Password confirmation      
   menu:
     actions: Actions
     show: show
@@ -237,13 +269,6 @@ en:
     newline: Add new line
     removeline: Remove line
     totalprice: Total price
-    fields:
-      status: Order status
-      payment: Payment method
-      deliveryadd: Delivery address
-      deliverycity: Delivery city
-      customername: Customer name
-      customersurname: Customer surname
     email:
       confirmation: Order confirmation
       customer1: Dear
@@ -254,25 +279,13 @@ en:
     edit: Editing product
     list: Listing poducts
     details: Product details
-    fields:
-      product: Product name
-      description: Description
-      category: Category
-      addedat: Added at
-      manufacturer: Manufacturer
-      stock: Stock
-      price: Price
+    search: Search options
+    searchaction: Search
+    searchrange:  to 
   user:
     new: New user
-    fields: 
-      name: Name
-      surname: Surname
-      email: Email
-      password: Password
-      passwordconfirm: Password confirmation
   messages:
     destroy: are you sure?
-    saveerror: 
-      order: prohibited this order from being saved
-      product: prohibited this product from being saved
-      user: prohibited this user from being saved
+  order_mailer:
+    new_order_email:
+      subject: Order confirmation

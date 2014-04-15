@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
   before_action :require_login, except: [:index, :show]
   before_filter :set_locale
   helper_method :user_logged?
+  helper_method :current_user   
 
   def require_login	
     unless user_logged?
@@ -20,5 +21,9 @@ class ApplicationController < ActionController::Base
   def set_locale
     I18n.locale = params[:locale] || I18n.default_locale
   end 
+
+  def current_user
+    @current_user ||= User.find(session[:user_id]) if session[:user_id]
+  end
 
 end

@@ -1,7 +1,7 @@
 <%= form_for(@order) do |f| %>
   <% if @order.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@order.errors.count, "error") %> <%= t "messages.saveerror.order"%>:</h2>
+      <h2><%= t('errors.template.header', :model => Order.model_name.human, :count => @order.errors.count) %>:</h2>
 
       <ul>
       <% @order.errors.full_messages.each do |msg| %>
@@ -13,29 +13,29 @@
 
   <% if params[:action] == "edit" %>
     <div class="field">
-      <%= f.label t("order.fields.status") %><br>
+      <%= f.label Order.human_attribute_name("order_status") %><br>
       <%= f.text_field :order_status %>
     </div>
   <% end %>
 
   <div class="field">
-    <%= f.label t("order.fields.payment") %><br>
+    <%= f.label Order.human_attribute_name("payment_method") %><br>
     <%= f.text_field :payment_method %>
   </div>
   <div class="field">
-    <%= f.label t("order.fields.deliveryadd") %><br>
+    <%= f.label Order.human_attribute_name("delivery_address") %><br>
     <%= f.text_field :delivery_address %>
   </div>
   <div class="field">
-    <%= f.label t("order.fields.deliverycity") %><br>
+    <%= f.label Order.human_attribute_name("delivery_city") %><br>
     <%= f.text_field :delivery_city %>
   </div>
   <div class="field">
-    <%= f.label t("order.fields.customername") %><br>
+    <%= f.label Order.human_attribute_name("customer_name") %><br>
     <%= f.text_field :customer_name %>
   </div>
   <div class="field">
-    <%= f.label t("order.fields.customersurname") %><br>
+    <%= f.label Order.human_attribute_name("customer_surname") %><br>
     <%= f.text_field :customer_surname %>
   </div>
   <div>
@@ -44,8 +44,8 @@
           <th colspan="3"><%= t "order.orderproducts"%></th>
       </tr>      
       <tr class="orderrow">
-        <th><%= t "product.fields.product"%></th>
-        <th><%= t "product.fields.quantity"%></th>
+        <th><%= Product.human_attribute_name("product_name") %></th>
+        <th><%= LineItem.human_attribute_name("quantity") %></th>
         <th><%= t "menu.actions"%></th>
       </tr>
       <%= f.fields_for :line_items do |builder| %>

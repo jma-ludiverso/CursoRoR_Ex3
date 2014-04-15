@@ -5,37 +5,37 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong><%= t "product.fields.product"%>:</strong>
+  <strong><%= Product.human_attribute_name("product_name")%>:</strong>
   <%= @product.product_name %>
 </p>
 
 <p>
-  <strong><%= t "product.fields.description"%>:</strong>
+  <strong><%= Product.human_attribute_name("description") %>:</strong>
   <%= @product.description %>
 </p>
 
 <p>
-  <strong><%= t "product.fields.category"%>:</strong>
+  <strong><%= Product.human_attribute_name("category") %>:</strong>
   <%= @product.category %>
 </p>
 
 <p>
-  <strong><%= t "product.fields.addedat"%>:</strong>
+  <strong><%= Product.human_attribute_name("added_at") %>:</strong>
   <%= @product.added_at %>
 </p>
 
 <p>
-  <strong><%= t "product.fields.manufacturer"%>:</strong>
+  <strong><%= Product.human_attribute_name("manufacturer") %>:</strong>
   <%= @product.manufacturer %>
 </p>
 
 <p>
-  <strong><%= t "product.fields.stock"%>:</strong>
+  <strong><%= Product.human_attribute_name("stock") %>:</strong>
   <%= @product.stock %>
 </p>
 
 <p>
-  <strong><%= t "product.fields.price"%>:</strong>
+  <strong><%= Product.human_attribute_name("price") %>:</strong>
   <%= @product.price %>
 </p>
 

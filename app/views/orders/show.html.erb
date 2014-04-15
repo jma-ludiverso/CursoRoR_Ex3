@@ -5,32 +5,32 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong><%= t "order.fields.status"%>:</strong>
+  <strong><%= Order.human_attribute_name("order_status") %>:</strong>
   <%= @order.order_status %>
 </p>
 
 <p>
-  <strong><%= t "order.fields.payment"%>:</strong>
+  <strong><%= Order.human_attribute_name("payment_method") %>:</strong>
   <%= @order.payment_method %>
 </p>
 
 <p>
-  <strong><%= t "order.fields.deliveryadd"%>:</strong>
+  <strong><%= Order.human_attribute_name("delivery_address") %>:</strong>
   <%= @order.delivery_address %>
 </p>
 
 <p>
-  <strong><%= t "order.fields.deliverycity"%>:</strong>
+  <strong><%= Order.human_attribute_name("delivery_city") %>:</strong>
   <%= @order.delivery_city %>
 </p>
 
 <p>
-  <strong><%= t "order.fields.customername"%>:</strong>
+  <strong><%= Order.human_attribute_name("customer_name") %>:</strong>
   <%= @order.customer_name %>
 </p>
 
 <p>
-  <strong><%= t "order.fields.customersurname"%>:</strong>
+  <strong><%= Order.human_attribute_name("customer_surname") %>:</strong>
   <%= @order.customer_surname %>
 </p>
 
@@ -39,16 +39,16 @@
       <th colspan="3"><%= t "order.orderproducts"%></th>
   </tr>
   <tr class="orderrow">
-    <th><%= t "product.fields.product"%></th>
-    <th><%= t "product.fields.quantity"%></th>
-    <th><%= t "product.fields.price"%></th>
+    <th><%= Product.human_attribute_name("product_name") %></th>
+    <th><%= LineItem.human_attribute_name("quantity") %></th>
+    <th><%= LineItem.human_attribute_name("price")%></th>
   </tr>
   <%= render @order.line_items %> 
-  <tr>ss
+  <tr>
     <td colspan="3" align="right">
         <%= label_tag(t("order.totalprice")) %>
         <%=h number_to_currency(@order.get_total_price, precision: 2, unit: "€") %>
-    </td>s
+    </td>
   </tr>
 </table>
 

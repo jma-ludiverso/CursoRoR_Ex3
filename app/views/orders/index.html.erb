@@ -5,12 +5,12 @@
 <table class="items_table">
   <thead>
     <tr class="orderrow">
-      <th><%= t "order.fields.status"%></th>
-      <th><%= t "order.fields.payment"%></th>
-      <th><%= t "order.fields.deliveryadd"%></th>
-      <th><%= t "order.fields.deliverycity"%></th>
-      <th><%= t "order.fields.customername"%></th>
-      <th><%= t "order.fields.customersurname"%></th>
+      <th><%= Order.human_attribute_name("order_status")%></th>
+      <th><%= Order.human_attribute_name("payment_method")%></th>
+      <th><%= Order.human_attribute_name("delivery_address")%></th>
+      <th><%= Order.human_attribute_name("delivery_city")%></th>
+      <th><%= Order.human_attribute_name("customer_name")%></th>
+      <th><%= Order.human_attribute_name("customer_surname")%></th>
       <th colspan="3"><%= t "menu.actions"%></th>
     </tr>
   </thead>

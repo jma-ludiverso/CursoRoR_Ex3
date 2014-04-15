@@ -32,8 +32,7 @@ class OrdersController < ApplicationController
         format.html { redirect_to @order, notice: 'Order was successfully created.' }
         format.json { render action: 'show', status: :created, location: @order }
 
-        user = User.find_by(id:session[:user_id])        
-        OrderMailer.new_order_email(@order,user).deliver    
+        OrderMailer.new_order_email(@order,current_user).deliver    
 
       else
         format.html { render action: 'new' }

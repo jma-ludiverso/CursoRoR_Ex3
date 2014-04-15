@@ -6,7 +6,7 @@ class Product < ActiveRecord::Base
 	validates :stock, numericality: { only_integer: true}
 	validates :price, numericality: { only_integer: false, greater_than:0}	
   	validates :category, :inclusion => {:in => CATEGORY_OPTIONS, :message => "must be one of the following: 'libros', 'música & películas', 'electrónica', 'hogar', 'juguetes', 'ropa', 'comestibles'"}
-	validates :product_name, uniqueness: {case_sensitive: false, message: "- The product already exists" }    
+	validates :product_name, uniqueness: {case_sensitive: false }    
 
 	has_many :line_items
   	has_many :orders, through: :line_items

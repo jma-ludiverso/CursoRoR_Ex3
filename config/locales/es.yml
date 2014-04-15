@@ -197,6 +197,38 @@ es:
   activerecord:
     errors:
       <<: *errors
+    models:
+      order:
+        one: Order
+        other: Orders
+      product:
+        one: Product
+        other: Products
+    attributes:
+      line_item:
+        quantity: Cantidad    
+        price: Precio
+      order:
+        order_status: Estado del pedido
+        payment_method: Forma de pago
+        delivery_address: Dirección de entrega
+        delivery_city: Ciudad
+        customer_name: Nombre del cliente
+        customer_surname: Apellido del cliente      
+      product:
+        product_name: Nombre del producto
+        description: Descripción
+        category: Categoría
+        added_at: Fecha de alta
+        manufacturer: Fabricante
+        stock: Existencias
+        price: Precio      
+      user:      
+        name: Nombre
+        surname: Apellido
+        email: Email
+        password: Contraseña
+        password_confirmation: Confirmación de contraseña      
   menu:
     actions: Acciones
     show: Mostrar
@@ -225,13 +257,6 @@ es:
     newline: Nueva línea
     removeline: Eliminar línea    
     totalprice: Precio total
-    fields:
-      status: Estado del pedido
-      payment: Forma de pago
-      deliveryadd: Dirección de entrega
-      deliverycity: Ciudad
-      customername: Nombre del cliente
-      customersurname: Apellido del cliente    
     email:
       confirmation: Confirmación de pedido
       customer1: Estimado/a,
@@ -242,25 +267,13 @@ es:
     edit: Modificar producto
     list: Listado de productos 
     details: Detalles del producto
-    fields:
-      product: Producto
-      description: Descripción
-      category: Categoría
-      addedat: Fecha de alta
-      manufacturer: Fabricante
-      stock: Existencias
-      price: Precio
+    search: Opciones de búsqueda
+    searchaction: Buscar
+    searchrange:  a 
   user:
     new: Nuevo usuario
-    fields: 
-      name: Nombre
-      surname: Apellido
-      email: Email
-      password: Contraseña
-      passwordconfirm: Confirmación de contraseña
   messages:
     destroy: ¿Está usted seguro?
-    saveerror: 
-      order: han impedido que este pedido se guarde
-      product: han impedido que este producto se guarde
-      user: han impedido que este usuario se guarde
+  order_mailer:
+    new_order_email:
+      subject: Confirmación de pedido

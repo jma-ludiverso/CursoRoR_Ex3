@@ -5,7 +5,7 @@ class OrderMailer < ActionMailer::Base
 	   @user = user
 	   @order = order
 	   @url  = 'http://cursorails.com'
-	   mail(to: @user.email, subject: 'Order confirmation')
+	   mail(to: @user.email)
 	end  
 
 end

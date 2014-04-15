@@ -1,11 +1,11 @@
 <form action="<%= products_path %>" method="get" >
   <div class="searchbox">
-    <h4>Search options</h4>
+    <h4><%= t("product.search") %></h4>
     <table>
       <tr>
         <td>
           <div class="field">
-            <%= label_tag(:category) %>:
+            <%= label_tag(Product.human_attribute_name("category")) %>:
           </div>
         </td>        
         <td>
@@ -15,7 +15,7 @@
         </td>
         <td>
           <div class="field">
-            <%= label_tag(:stock) %>:
+            <%= label_tag(Product.human_attribute_name("stock")) %>:
           </div>
         </td>        
         <td>
@@ -25,7 +25,7 @@
         </td>
         <td>
           <div class="field">
-            <%= label_tag(:manufacturer) %>:
+            <%= label_tag(Product.human_attribute_name("manufacturer")) %>:
           </div>
         </td>                  
         <td>
@@ -37,7 +37,7 @@
       <tr>
         <td>
           <div class="field">
-            <%= label_tag("added_at") %>:
+            <%= label_tag(Product.human_attribute_name("added_at")) %>:
           </div>
         </td>                
         <td>
@@ -47,7 +47,7 @@
         </td>        
         <td align="center">
           <div class="field">
-            <%= label_tag(" to ") %>
+            <%= label_tag(t("product.searchrange")) %>
           </div>
         </td>        
         <td>
@@ -60,7 +60,7 @@
       <tr>
         <td>
           <div class="field">
-            <%= label_tag("Price range") %>:
+            <%= label_tag(Product.human_attribute_name("price")) %>:
           </div>
         </td>        
         <td>
@@ -70,7 +70,7 @@
         </td>
         <td align="center">
           <div class="field">
-            <%= label_tag(" to ") %>
+            <%= label_tag(t("product.searchrange")) %>
           </div>
         </td>                        
         <td>
@@ -82,7 +82,7 @@
       </tr>      
       <tr>
         <td colspan="6" align="right">
-          <%= submit_tag 'Search!', :class => 'btn btn-product'%>
+          <%= submit_tag t("product.search"), :class => 'btn btn-product'%>
         </td>
       </tr>
     </table>
