@@ -263,7 +263,7 @@ es:
       customer2: su pedido se ha creado correctamente
       link: Puede seguir el estado de su pedido a través del siguiente enlace      
   product:
-    new: New producto
+    new: Nuevo producto
     edit: Modificar producto
     list: Listado de productos 
     details: Detalles del producto
